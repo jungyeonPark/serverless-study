@@ -1,0 +1,23 @@
+service: jungyeon-api-test
+
+provider:
+  name: aws
+  stage: dev
+  runtime: python3.7
+
+#custom:
+#  pythonRequirements:
+#    dockerizePip: true
+#    useDownloadCache: false
+#    useStaticCache: false
+
+#plugins:
+#  - serverless-python-requirements
+
+functions:
+  hello:
+    handler: handler.hello
+    events:
+      - http:
+          path: /
+          method: get
